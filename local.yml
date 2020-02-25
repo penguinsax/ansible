@@ -1,6 +1,11 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Install htop
-    pacman: name=htop
-
+  - name: Install packages
+    pacman: name={{items}}
+    with items:
+      - htop
+      - mc
+      - tmux
+      - screenfetch
+      - neofetch
