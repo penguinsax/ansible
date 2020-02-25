@@ -2,5 +2,5 @@
   become: true
   tasks:
   - name: Install packages
-    pacman: name= name: [htop mc tmux screenfetch neofetch]
+    pacman: name=['htop', 'mc', 'tmux', 'screenfetch', 'neofetch']
     
