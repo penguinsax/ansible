@@ -1,12 +1,11 @@
 - hosts: localhost
   become: true
+  pre_tasks:
+    - name: update repositories
+      pacman: update_cache=yes
+      changed_when: False
+
   tasks:
-  - name: Install packages
-    pacman: name={{item}}
-    with_items:
-      - htop
-      - mc
-      - tmux 
-      - screenfetch
-      - neofetch
-    
+    - include: tasks/users.yml
+    - include: tasks/packages.yml
+    - include: tasks/cron.yml
