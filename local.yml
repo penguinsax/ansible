@@ -2,5 +2,11 @@
   become: true
   tasks:
   - name: Install packages
-    pacman: name=['htop', 'mc', 'tmux', 'screenfetch', 'neofetch']
+    pacman{{item}}
+    with_items:
+      - htop
+      - mc
+      - tmux 
+      - screenfetch
+      - neofetch
     
