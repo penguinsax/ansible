@@ -3,7 +3,7 @@
   tasks:
   - name: Install packages
     pacman: name={{items}}
-    with items:
+    with_items:
       - htop
       - mc
       - tmux
