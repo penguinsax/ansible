@@ -1,9 +1,4 @@
 - name: Install packages
-  pacman: name={{item}}
-  with_items:
-    - htop
-    - mc
-    - tmux 
-    - screenfetch
-    - neofetch
+  pacman: 
+    name: ['htop', 'mc', 'tmux', 'screenfetch', 'neofetch']
     
